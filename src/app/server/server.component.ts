@@ -4,6 +4,11 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-server',   // always prefix with app
     templateUrl: './server.component.html' // get the relative path of the template
+    styles: [`
+        .online {
+            color: white;
+        }
+    `]
 })
 
 // standard typescript class
@@ -18,5 +23,9 @@ export class ServerComponent {
 
     getServerStats() {
         return this.serverStatus;
+    }
+
+    getColor() {
+        return this.serverStatus === 'online' ? 'green' : 'red';
     }
 }
