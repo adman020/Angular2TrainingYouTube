@@ -11,6 +11,11 @@ export class ServerComponent {
     serverID: number = 10;
     serverStatus: string = 'offline';
 
+    constructor() {
+        // shorthand if else - if greater than 0.5 it's online otherwise offline
+        this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+    }
+
     getServerStats() {
         return this.serverStatus;
     }
